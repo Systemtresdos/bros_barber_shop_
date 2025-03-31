@@ -17,8 +17,14 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('phone')->nullable()->after('status'); // Número de teléfono
+            $table->string('address')->nullable()->after('phone'); // Dirección
+            $table->string('profile_picture')->nullable()->after('status'); // Foto de perfil
             $table->rememberToken();
-            $table->timestamps();
+            $table->timestamps();$table->unsignedBigInteger('role_id')->after('password');
+            $table->foreign('role_id')->references('id')->on('roles');
+            $table->integer('status')->default(1)->after('role_id'); // 1 para activo, 0 para inactivo
+
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
