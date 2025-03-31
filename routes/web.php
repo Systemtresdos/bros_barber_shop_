@@ -24,7 +24,7 @@ require __DIR__.'/auth.php';
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function() {
+    Route::resource('users', \App\Http\Controllers\Admin\UserController::class)
+         ->except(['show', 'destroy']);
+});

@@ -18,10 +18,15 @@ class User extends Authenticatable
      *
      * @var list<string>
      */
+
+    protected $primaryKey = 'usuario_id';
+
+
     protected $fillable = [
         'name',
         'email',
         'password',
+        
     ];
 
     /**
@@ -32,6 +37,11 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
+        'telefono',
+        'direccion',
+        'foto_perfil',
+        'rol',
+        'status',
     ];
 
     /**
@@ -44,8 +54,14 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'status' => 'integer',
         ];
     }
+
+    protected $attributes = [
+        'rol' => 'cliente',
+        'status' => 1
+    ];
 
     /**
      * Get the user's initials
@@ -56,5 +72,10 @@ class User extends Authenticatable
             ->explode(' ')
             ->map(fn (string $name) => Str::of($name)->substr(0, 1))
             ->implode('');
+    }
+
+    public function ventas()
+    {
+        return $this->hasMany(Venta::class, 'cliente_id', 'usuario_id');
     }
 }

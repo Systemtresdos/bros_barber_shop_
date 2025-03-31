@@ -12,8 +12,16 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('ventas', function (Blueprint $table) {
-            $table->id();
+            $table->id('venta_id');
+            $table->unsignedBigInteger('cliente_id');
+            $table->dateTime('fecha_venta')->useCurrent();
+            $table->decimal('total', 10, 2);
+            $table->foreign('cliente_id')->references('usuario_id')->on('users')->onDelete('cascade');
+            $table->index('fecha_venta');
+            $table->string('tipo_pago')->default('efectivo');
+            $table->integer('status')->default(1);
             $table->timestamps();
+
         });
     }
 

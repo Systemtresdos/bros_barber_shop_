@@ -12,18 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->id();
+            $table->id('usuario_id');
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('phone')->nullable()->after('status'); // Número de teléfono
-            $table->string('address')->nullable()->after('phone'); // Dirección
-            $table->string('profile_picture')->nullable()->after('status'); // Foto de perfil
+            $table->string('telefono')->nullable(); // Número de teléfono
+            $table->string('direccion')->nullable(); // Dirección
+            $table->string('foto_perfil')->nullable(); // Foto de perfil
+            $table->enum('rol', ['admin', 'barbero', 'cliente'])->default('cliente'); // Rol del usuario
+            $table->integer('status')->default(1); // 1: Activo, 0: Inactivo
             $table->rememberToken();
-            $table->timestamps();$table->unsignedBigInteger('role_id')->after('password');
-            $table->foreign('role_id')->references('id')->on('roles');
-            $table->integer('status')->default(1)->after('role_id'); // 1 para activo, 0 para inactivo
+            $table->timestamps();
 
         });
 
