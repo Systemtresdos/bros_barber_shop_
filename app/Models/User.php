@@ -26,7 +26,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        
+        'telefono',
+        'direccion',
+        'foto_perfil'
     ];
 
     /**
@@ -37,10 +39,6 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        'telefono',
-        'direccion',
-        'foto_perfil',
-        'rol',
         'status',
     ];
 
@@ -78,4 +76,65 @@ class User extends Authenticatable
     {
         return $this->hasMany(Venta::class, 'cliente_id', 'usuario_id');
     }
+
+    //============================================================================
+    public static function get_labels(){
+        return [
+            'data' => [
+                [
+                    'display-name' => 'ID',
+                    'name' => 'usuario_id',
+                    'type' => 'auto',
+                ],
+                [
+                    'display-name' => 'Nombre',
+                    'name' => 'name',
+                    'type' => 'text',
+                ],
+                [
+                    'display-name' => 'Email',
+                    'name' => 'email',
+                    'type' => 'email',
+                ],
+                [
+                    'display-name' => 'Telefono',
+                    'name' => 'telefono',
+                    'type' => 'text',
+                ],
+                [
+                    'display-name' => 'Direccion',
+                    'name' => 'direccion',
+                    'type' => 'textarea',
+                ],
+                [
+                    'display-name' => 'Url perfil',
+                    'name' => 'foto_perfil',
+                    'type' => 'text',
+                ],
+                [
+                    'display-name' => 'Rol',
+                    'name' => 'rol',
+                    'type' => 'text',
+                ],
+            ],
+        ];
+    }
+    public static function get_fkLabels(){
+        return [];
+    }
+    public function get_fk()
+    {
+        return [];
+    }
+    public static function get_validate(){
+        return [
+            'name' => ['required', 'string', 'max:16'],
+            'email' => ['required', 'email'],
+            'telefono' => ['nullable', 'string', 'max:16'],
+            'direccion' => ['nullable','string', 'max:255'],
+            'foto_perfil' => ['nullable', 'string', 'max:255'],
+            'rol' => ['required', 'string', 'max:16'],
+        ];
+    }
+    //============================================================================
 }
