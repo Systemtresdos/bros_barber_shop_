@@ -3,6 +3,23 @@
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
+use Illuminate\Http\Request;
+use App\Http\Controllers\CrudController;
+
+Route::get('/crud', function (Request $request) {
+    return CrudController::index($request);
+});
+Route::post('/crud/crear', function (Request $request) {
+    return CrudController::create($request);
+});
+Route::post('/crud/editar', function (Request $request) {
+    return CrudController::edit($request);
+});
+Route::post('/crud/eliminar', function (Request $request) {
+    return CrudController::delete($request);
+});
+
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
