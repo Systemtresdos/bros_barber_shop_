@@ -28,7 +28,8 @@ class User extends Authenticatable
         'password',
         'telefono',
         'direccion',
-        'foto_perfil'
+        'foto_perfil',
+        'rol'
     ];
 
     /**
@@ -116,9 +117,9 @@ class User extends Authenticatable
                     'name' => 'rol',
                     'type' => 'enum',
                     'enum' => [
-                        ['display-name' => 'Cliente', 'name' => 'cliente'],
-                        ['display-name' => 'Empleado', 'name' => 'empleado'],
                         ['display-name' => 'Administrador', 'name' => 'administrador'],
+                        ['display-name' => 'Barbero', 'name' => 'barbero'],
+                        ['display-name' => 'Cliente', 'name' => 'cliente'],
                     ]
                 ],
             ],
