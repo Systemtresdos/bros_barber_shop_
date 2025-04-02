@@ -29,12 +29,14 @@
                     if (count($arregloDatos)){
                         $fkarray = $dato->get_fk();
                     }
-                @endphp
-                @if($nombre=="User")
-                    <tr id = "crud-table-{{$dato_arreglo['usuario_id']}}">
-                @else
-                    <tr id = "crud-table-{{$dato_arreglo[strtolower($nombre)."_id"]}}">
-                @endif
+                    $curID = strtolower($nombre)."_id";
+                    switch(strtolower($nombre)){
+                        case "user":$curID="usuario_id";break;
+                        case "inventario_movimiento":$curID="movimiento_id";break;
+                        case "detalle_venta":$curID="detalle_id";break;
+                    }
+                @endphp 
+                    <tr id = "crud-table-{{$dato_arreglo[$curID]}}">
                         @foreach ($arregloDatos['data'] as $index)
                             <td>{{ $dato_arreglo[$index['name']] }}</td>
                         @endforeach
@@ -43,12 +45,7 @@
                         @endforeach
                         <td>
                             <div class="btn-group">
-                            @php
-                             $curID = strtolower($nombre)."_id";
-                             if($nombre=="User"){
-                                $curID="usuario_id";
-                             }
-                            @endphp
+
                             @if (Auth::user()->rol!="cliente")
                                 <button type="button" class="btn btn-info" onclick = "editarModal({{ $dato_arreglo[$curID] }})" data-toggle="modal" data-target="#modal-crud">
                                     <i class="fas fa-wrench"></i>

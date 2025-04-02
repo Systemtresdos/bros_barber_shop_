@@ -17,9 +17,9 @@ class Oferta extends Model
         'tipo',
         'item_id',
     ];
-    public function cliente()
+    public function producto()
     {
-        return $this->belongsTo(User::class, 'cliente_id', 'usuario_id');
+        return $this->belongsTo(Producto::class, 'item_id', 'producto_id');
     }
 //============================================================================
     public static function get_labels(){
@@ -55,27 +55,29 @@ class Oferta extends Model
     }
     public static function get_validate(){
         return [
-            'fecha_venta' => ['required', 'string', 'max:10'],
-            'total' => ['required', 'numeric','min:0','max:999999'],
-            'tipo_pago' => ['required','string', 'max:255'],
-            'cliente_id' => ['required', 'exists:users,usuario_id'],
+            'nombre' => ['required','string', 'max:64'],
+            'descuento' => ['required', 'numeric','min:0','max:999999'],
+            'fecha_inicio' => ['required', 'string', 'max:10'],
+            'fecha_fin' => ['required', 'string', 'max:10'],
+            'tipo' => ['required','string', 'max:255'],
+            'item_id' => ['required', 'exists:productos,producto_id'],
         ];
     }
     public static function get_fkLabels(){
         return [
             [
-                'name' => 'Usuario',
-                'attr' => 'cliente_id',
-                'fk_name' => 'email',
-                'fk_id' => 'usuario_id',
-                'data' => User::select('usuario_id', 'email')->get(),
+                'name' => 'Producto',
+                'attr' => 'item_id',
+                'fk_name' => 'nombre',
+                'fk_id' => 'producto_id',
+                'data' => Producto::select('producto_id', 'nombre')->get(),
             ],
         ];
     }
     public function get_fk()
     {
         return [
-            'cliente_id' => $this->cliente->email,
+            'item_id' => $this->producto->nombre,
         ];
     }
     //============================================================================

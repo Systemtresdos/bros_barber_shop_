@@ -44,6 +44,11 @@ class Producto extends Model
                         'name' => 'stock',
                         'type' => 'number',
                     ],
+                    [
+                        'display-name' => 'Fecha de actualizacion',
+                        'name' => 'fecha_actualizacion',
+                        'type' => 'date',
+                    ],
                 ],
             ];
         }
