@@ -114,7 +114,12 @@ class User extends Authenticatable
                 [
                     'display-name' => 'Rol',
                     'name' => 'rol',
-                    'type' => 'text',
+                    'type' => 'enum',
+                    'enum' => [
+                        ['display-name' => 'Cliente', 'name' => 'cliente'],
+                        ['display-name' => 'Empleado', 'name' => 'empleado'],
+                        ['display-name' => 'Administrador', 'name' => 'administrador'],
+                    ]
                 ],
             ],
         ];
