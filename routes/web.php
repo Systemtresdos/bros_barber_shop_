@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
-
+use App\Http\Controllers\TemplateController;
 use Illuminate\Http\Request;
 use App\Http\Controllers\CrudController;
 
@@ -45,3 +45,7 @@ Route::prefix('admin')->middleware(['auth', 'role:admin'])->group(function() {
     Route::resource('users', \App\Http\Controllers\Admin\UserController::class)
          ->except(['show', 'destroy']);
 });
+
+// Define the route to the about page
+Route::get('/home', [TemplateController::class, 'index']); 
+Route::get('/services', function () { return view('frontend.services'); });
