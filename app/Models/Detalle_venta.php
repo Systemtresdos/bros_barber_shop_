@@ -8,8 +8,8 @@ class Detalle_venta extends Model
 {
     protected $primaryKey = 'detalle_id';
     protected $fillable = [
-        'producto_id',
-        'tipo_movimiento',
+        'venta_id',
+        'tipo_item',
         'cantidad',
         'fecha_movimiento',
         'descripcion',
