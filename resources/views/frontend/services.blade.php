@@ -46,7 +46,10 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-1">
                             <div class="logo">
+
                                 <a href="index.html"><img src="assets/img/logo/logo_sin_fondo" alt=""></a>
+
+
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">
@@ -93,7 +96,11 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-70 text-center">
+<<<<<<< HEAD
                                 <h2>Nuestros Servicios</h2>
+=======
+                                <h2>Our Services</h2>
+>>>>>>> 61c0ccab55837ae23dce35b1860ad319f2e16fab
                             </div>
                         </div>
                     </div>
@@ -108,7 +115,11 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-xl-7 col-lg-8 col-md-11 col-sm-11">
                         <div class="section-tittle text-center mb-90">
+<<<<<<< HEAD
                             <span>Servicios Profesionales</span>
+=======
+                            <span>Professional Services</span>
+>>>>>>> 61c0ccab55837ae23dce35b1860ad319f2e16fab
                             <h2>Our Best services that  we offering to you</h2>
                         </div>
                     </div>
