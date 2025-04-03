@@ -55,19 +55,11 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-<<<<<<< HEAD
-                                            <li class="active"><a href="{{ url('index.html')}}">Home</a></li>
-                                            <li><a href="{{ url('/about.html') }}">About</a></li>
-                                            <li><a href="{{ url('/services.html') }}">Services</a></li>
-                                            <li><a href="{{ url('/portfolio.html')}}">Portfolio</a></li>
-                                            <li><a href="{{ url('/blog.html') }}">Blog</a>
-=======
                                             <li class="active"><a href="{{ url('/home') }}">Inicio</a></li>
                                             <li><a href="{{ url('/about') }}">Sobre Nosotros</a></li>
                                             <li><a href="{{ url('/services') }}">Servicios</a></li>
                                             <li><a href="{{ url('/portfolio')}}">Portfolio</a></li>
                                             <li><a href="{{ url('/blog') }}">Blog</a>
->>>>>>> fe74665eb5e73a0abbe11f85f9c6ca40d8459e44
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Blog</a></li>
                                                     <li><a href="blog_details.html">Blog Detalles</a></li>
