@@ -55,11 +55,11 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li class="active"><a href="{{ url('/home') }}">Inicio</a></li>
-                                            <li><a href="{{ url('/about') }}">Sobre Nosotros</a></li>
-                                            <li><a href="{{ url('/services') }}">Servicios</a></li>
-                                            <li><a href="{{ url('/portfolio')}}">Portfolio</a></li>
-                                            <li><a href="{{ url('/blog') }}">Blog</a>
+                                            <li class="active"><a href="{{ url('/index.html') }}">Inicio</a></li>
+                                            <li><a href="{{ url('/about.html') }}">Sobre Nosotros</a></li>
+                                            <li><a href="{{ url('/services.html') }}">Servicios</a></li>
+                                            <li><a href="{{ url('/portfolio.html')}}">Portfolio</a></li>
+                                            <li><a href="{{ url('/blog.html') }}">Blog</a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Blog</a></li>
                                                     <li><a href="blog_details.html">Blog Detalles</a></li>
