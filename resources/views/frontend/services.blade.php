@@ -93,7 +93,7 @@
                     <div class="row">
                         <div class="col-xl-12">
                             <div class="hero-cap hero-cap2 pt-70 text-center">
-                                <h2>Our Services</h2>
+                                <h2>Nuestros Servicios</h2>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                 <div class="row d-flex justify-content-center">
                     <div class="col-xl-7 col-lg-8 col-md-11 col-sm-11">
                         <div class="section-tittle text-center mb-90">
-                            <span>Professional Services</span>
+                            <span>Servicios Profesionales</span>
                             <h2>Our Best services that  we offering to you</h2>
                         </div>
                     </div>
