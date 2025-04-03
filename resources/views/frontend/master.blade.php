@@ -31,7 +31,7 @@
             <div class="preloader-inner position-relative">
                 <div class="preloader-circle"></div>
                 <div class="preloader-img pere-text">
-                    <img src="{{asset('assets/img/logo/loder.png')}}" alt="">
+                    <img src="{{asset('assets/img/logo/Bros_barber_shopLogo.png')}}" alt="">
                 </div>
             </div>
         </div>
@@ -55,18 +55,18 @@
                                 <div class="main-menu f-right d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li class="active"><a href="index.html">Home</a></li>
-                                            <li><a href="{{ url('/about') }}">About</a></li>
-                                            <li><a href="{{ url('/services') }}">Services</a></li>
+                                            <li class="active"><a href="{{ url('/home') }}">Inicio</a></li>
+                                            <li><a href="{{ url('/about') }}">Sobre Nosotros</a></li>
+                                            <li><a href="{{ url('/services') }}">Servicios</a></li>
                                             <li><a href="{{ url('/portfolio')}}">Portfolio</a></li>
                                             <li><a href="{{ url('/blog') }}">Blog</a>
                                                 <ul class="submenu">
                                                     <li><a href="blog.html">Blog</a></li>
-                                                    <li><a href="blog_details.html">Blog Details</a></li>
-                                                    <li><a href="elements.html">Element</a></li>
+                                                    <li><a href="blog_details.html">Blog Detalles</a></li>
+                                                    <li><a href="elements.html">Elementos</a></li>
                                                 </ul>
                                             </li>
-                                            <li><a href="{{ url('/contact') }}">Contact</a></li>
+                                            <li><a href="{{ url('/contact') }}">Contactanos</a></li>
                                         </ul>
                                     </nav>
                                 </div>
